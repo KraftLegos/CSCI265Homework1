@@ -14,37 +14,98 @@ public class proj1KPG {
      * @param args arguments from the command line
      */
     public static void main(String[] args) {
+        partOne(); // Time
+        partTwo(); // Coins
+        partThree(); // Mailing Address
+    }
+
+    private static void partOne() {
         // Create the scanner object
         Scanner scanner = new Scanner(System.in);
 
         // Print the prompt to take input
-        System.out.println("Please enter amount of seconds: ");
+        System.out.print("Seconds: ");
 
-        int hours = 0; // define hours variable
-        int minutes = 0; // define minutes variable
         int seconds = scanner.nextInt(); // define seconds variable and pull an int from the command line.
-
-        // Creates a loop that removes 60 seconds and adds 1 minute until seconds is less than 60
-        while (seconds > 60) {
-            minutes++;
-            seconds-=60;
-        }
-
-        // Creates a loop that removes 60 minutes and adds 1 hour until minutes is less than 60
-        while (minutes > 60) {
-            hours++;
-            minutes-=60;
-        }
-
-        // Create a string with a check to remove the "s" character when there is only one hour, minute, or second.
-        String secondsWord = seconds==1 ? "second" : "seconds";
-        String minutesWord = minutes==1 ? "minute" : "minutes";
-        String hoursWord = hours==1 ? "hour" : "hours";
+        int minutes = seconds/60; // define minutes variable by dividing seconds by 60
+        seconds-=minutes*60; // subtract minutes from seconds
+        int hours = minutes/60; // define hours variable
+        minutes-=hours*60; // subtract hours from minutes
 
         // Create a string to store the output
-        String output = "This is " + hours + " " + hoursWord + " " + minutes + " " + minutesWord + " and " + seconds + " " + secondsWord + ".";
+        String output = "This is " + hours + " hours " + minutes + " minutes and " + seconds + " seconds.";
 
         // Output the final result
         System.out.println(output);
+        System.out.println();
+    }
+
+    private static void partTwo() {
+        // Create the scanner object
+        Scanner scanner = new Scanner(System.in);
+
+        // Print the prompt for input
+        System.out.print("Quarters: ");
+        int quarters = scanner.nextInt(); // Take an int from the scanner to the quarters variable
+        // Repeat for all input
+
+        System.out.print("Dimes: ");
+        int dimes = scanner.nextInt();
+
+        System.out.print("Nickles: ");
+        int nickles = scanner.nextInt();
+
+        System.out.print("Pennies: ");
+        int pennies = scanner.nextInt();
+
+        double total = 0; // Define the "total" variable
+
+        // Multiply the amount of coins by the amount the coins are worth, add it to the total
+        total+=(quarters*0.25);
+        total+=(dimes*0.1);
+        total+=(nickles*0.05);
+        total+=(pennies*0.01);
+
+        // Round to the second decimal place
+        String totalString = String.format("%.2f", total);
+        String output = "This is equal to $" + totalString; // Construct the output
+
+        System.out.println(output); // Print the output
+        System.out.println();
+    }
+
+    private static void partThree() {
+        Scanner scanner = new Scanner(System.in);
+
+        // Print the prompt for input
+        System.out.print("First name: ");
+        String firstName = scanner.nextLine(); // Take an int from the scanner to the quarters variable
+        // Repeat for all input
+
+        System.out.print("Last name: ");
+        String lastName = scanner.nextLine();
+
+        System.out.print("Address: ");
+        String address = scanner.nextLine();
+
+        System.out.print("City: ");
+        String city = scanner.nextLine();
+
+        System.out.print("State: ");
+        String state = scanner.nextLine();
+
+        System.out.print("Zip code: ");
+        String zipCode = scanner.next();
+
+        // Single print statement mailing address output
+        System.out.println(firstName + " " + lastName + "\n" + address + "\n" + city + ", " + state + "  " + zipCode);
+
+        // Six print statement mailing address output
+        System.out.print(firstName + " ");
+        System.out.println(lastName);
+        System.out.println(address);
+        System.out.print(city + ", ");
+        System.out.print(state + "  ");
+        System.out.println(zipCode);
     }
 }
