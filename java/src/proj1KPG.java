@@ -26,11 +26,11 @@ public class proj1KPG {
         // Print the prompt to take input
         System.out.print("Seconds: ");
 
-        int seconds = scanner.nextInt(); // define seconds variable and pull an int from the command line.
-        int minutes = seconds/60; // define minutes variable by dividing seconds by 60
-        seconds-=minutes*60; // subtract minutes from seconds
-        int hours = minutes/60; // define hours variable
-        minutes-=hours*60; // subtract hours from minutes
+        int totalSeconds = scanner.nextInt(); // define seconds variable and pull an int from the command line.
+        int totalMinutes = totalSeconds/60;
+        int hours = totalSeconds/3600; // define hours variable (This gets rounded up)
+        int minutes = totalMinutes-(hours*60); // subtract hours (in minutes) from total minutes
+        int seconds = totalSeconds-(minutes*60)-(hours*3600); // subtract minutes and hours (in seconds) from total seconds
 
         // Create a string to store the output
         String output = "This is " + hours + " hours " + minutes + " minutes and " + seconds + " seconds.";
