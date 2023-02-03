@@ -35,7 +35,29 @@ void partOne() {
 }
 
 void partTwo() {
+    int quarters, dimes, nickles, pennies;
 
+    cout << "\n\nQuarters:";
+    cin >> quarters;
+
+    cout << "Dimes:";
+    cin >> dimes;
+
+    cout << "Nickles:";
+    cin >> nickles;
+
+    cout << "Pennies:";
+    cin >> pennies;
+
+    double total = 0; // Define the "total" variable
+
+    // Multiply the amount of coins by the amount the coins are worth, add it to the total
+    total+=(quarters*0.25);
+    total+=(dimes*0.1);
+    total+=(nickles*0.05);
+    total+=(pennies*0.01);
+
+    cout << fixed << setprecision(2) << "This is equal to " << total; // Print the output
 }
 
 void partThree() {
