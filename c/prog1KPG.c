@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 void partOne();
 
@@ -14,9 +15,10 @@ int main() {
 }
 
 void partOne() {
+    fflush(stdin); //Flushes input/output buffer
     int totalSeconds;
 
-    printf("Seconds: ");
+    printf("Seconds:");
     scanf("%d", &totalSeconds);
 
     int totalMinutes = totalSeconds/60;
@@ -24,10 +26,11 @@ void partOne() {
     int minutes = totalMinutes-(hours*60); // subtract hours (in minutes) from total minutes
     int seconds = totalSeconds-(minutes*60)-(hours*3600); // subtract minutes and hours (in seconds) from total seconds
 
-    printf("\n" "This is %d hours %d minutes and %d seconds.", hours, minutes, seconds);
+    printf("This is %d hours %d minutes and %d seconds.", hours, minutes, seconds);
 }
 
 void partTwo() {
+    fflush(stdin);
     int quarters, dimes, nickles, pennies;
 
     printf("\n\nQuarters:");
@@ -54,5 +57,43 @@ void partTwo() {
 }
 
 void partThree() {
+    fflush(stdin);
+    char firstName[50], lastName[50], address[100], city[50], state[11], zipCode[11];
 
+    // Print the prompt for input
+    printf("\n\nFirst name:");
+    fgets(firstName, 49, stdin); // Take an int from the scanner to the quarters variable
+    firstName[strcspn (firstName, "[\r\n]")] = 0; //Remove \r and \n from the string
+    // Repeat for all input
+
+    printf("Last name:");
+    fgets(lastName, 49, stdin);
+    lastName[strcspn (lastName, "[\r\n]")] = 0;
+
+    printf("Address:");
+    fgets(address, 100, stdin);
+    address[strcspn (address, "[\r\n]")] = 0;
+
+    printf("City:");
+    fgets(city, 49, stdin);
+    city[strcspn (city, "[\r\n]")] = 0;
+
+    printf("State:");
+    fgets(state, 10, stdin);
+    state[strcspn (state, "[\r\n]")] = 0;
+
+    printf("Zip code:");
+    fgets(zipCode, 10, stdin);
+    zipCode[strcspn (zipCode, "[\r\n]")] = 0;
+
+    // Single print statement mailing address output
+    printf("\n%s %s\n%s\n%s, %s  %s", firstName, lastName, address, city, state, zipCode);
+
+    // Six print statement mailing address output
+    printf("\n%s", firstName);
+    printf(" %s", lastName);
+    printf("\n%s", address);
+    printf("\n%s", city);
+    printf(", %s", state);
+    printf("  %s", zipCode);
 }
