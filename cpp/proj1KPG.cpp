@@ -39,15 +39,19 @@ void partTwo() {
 
     cout << "\n\nQuarters:";
     cin >> quarters;
+    cin.ignore(256, '\n');
 
     cout << "Dimes:";
     cin >> dimes;
+    cin.ignore(256, '\n');
 
     cout << "Nickles:";
     cin >> nickles;
+    cin.ignore(256, '\n');
 
     cout << "Pennies:";
     cin >> pennies;
+    cin.ignore(256, '\n');
 
     double total = 0; // Define the "total" variable
 
@@ -61,5 +65,38 @@ void partTwo() {
 }
 
 void partThree() {
+    string firstName, lastName, address, city, state, zipCode;
 
+    // Print the prompt for input
+    cout << "\n\nFirst name:";
+    getline(cin, firstName); // Take an int from the scanner to the quarters variable;
+    // Remove \r and \n from the string
+    // Repeat for all input
+
+    cout << "Last name:";
+    getline(cin, lastName);
+
+    cout << "Address:";
+    getline(cin, address);
+
+    cout << "City:";
+    getline(cin, city);
+
+    cout << "State:";
+    getline(cin, state);
+
+    cout << "Zip code:";
+    getline(cin, zipCode);
+    // Single print statement mailing address output
+    cout << "\n" << firstName << " " << lastName <<
+         "\n" << address <<
+         "\n" << city << ", " << state << "  " << zipCode;
+
+    // Six print statement mailing address output
+    cout << "\n" << firstName;
+    cout << " " << lastName;
+    cout << "\n" << address;
+    cout <<"\n" << city;
+    cout << ", " << state;
+    cout << "  " << zipCode;
 }
