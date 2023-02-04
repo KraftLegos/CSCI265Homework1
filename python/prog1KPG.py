@@ -30,5 +30,24 @@ def part2():
     print("This is equal to $" + str(round(total, 2)))
 
 
+def part3():
+    first_name = input("\nFirst name: ")
+    last_name = input("Last name: ")
+    address = input("Address: ")
+    city = input("City: ")
+    state = input("State: ")
+    zip_code = input("Zip Code: ")
+
+    print(first_name + " " + last_name + "\n" + address + "\n" + city + ", " + state + "  " + zip_code)
+
+    print(first_name + " ", end='')
+    print(last_name, end='')
+    print("\n" + address, end='')
+    print("\n" + city + ", ", end='')
+    print(state + "  ", end='')
+    print(zip_code, end='')
+
+
 part1()
 part2()
+part3()
