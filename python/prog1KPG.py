@@ -1,3 +1,9 @@
+
+#
+# Python portion of Project1
+# CSCI 265
+# Kaleb Gilson - kaleb.gilson@und.edu - 1/26/23
+#
 def part1():
     total_seconds = int(input("Seconds: "))  # define seconds variable and pull an int from the command line.
     total_minutes = total_seconds // 60

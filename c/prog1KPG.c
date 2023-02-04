@@ -1,3 +1,9 @@
+/**
+ * C portion of Project1
+ * CSCI 265
+ * Kaleb Gilson - kaleb.gilson@und.edu - 1/26/23
+ */
+
 #include <stdio.h>
 #include <string.h>
 
